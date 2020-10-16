@@ -433,3 +433,30 @@ synchronized(obj)
 	Set:
 		|--HashSet:看到hash，就知道哈希表，查询速度更快，并想到元素唯一，通过hashCode(),equals方法保证唯一性。
 		|--TreeSet:看到tree，就知道二叉树，可以排序，排序想到Comparable-compareTo Comparator--compare方法。
+
+> Map集合特点；
+```
+1，内部存储的都是键key值value对。
+2，必须要保证的键的唯一性。
+
+Map常见功能。
+	1，存储。v put(k,v);
+	2，获取。v get(k);
+	3，移除。v remove(k);
+	4，Set<k> keySet();
+	5，Set<Map.Entry<k,v>> entrySet();
+	6，Collection<v> values();
+	
+	
+Map
+	|--Hashtable：数据结构：哈希表。是同步的，不允许null作为键和值。被hashMap替代。
+		|--Properties：属性集，键和值都是字符串，而且可以结合流进行键值的操作。等到了IO流，你会更清楚。
+	|--HashMap：数据结构：哈希表。不是同步的，允许null作为键和值。
+		|--LinkedHashMap：基于链表+哈希表。可以保证map集合有序（存入和取出的顺序一致）。
+	|--TreeMap：数据结构：二叉树。不是同步的。可以对map集合中的键进行排序。
+
+什么时候使用map集合呢？
+分析问题时出现对应关系，毫不犹豫的想到map集合。
+如果对应关系中出现了有序的数字，想到数组。
+注意：如果对应关系个数不确定，还是以map为主。
+```

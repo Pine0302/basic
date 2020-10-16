@@ -2,11 +2,9 @@ package com.company.collection;
 
 
 
-import com.company.collection.comparator.ComparatorByLength;
-
 import java.util.Objects;
 
-public class Student implements Comparable {
+public class Student implements Comparable<Student> {
     private String name;
     private int age;
 
@@ -54,24 +52,9 @@ public class Student implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(Student o) {
+        int temp = this.age - o.age;
 
-
-        if(!(o instanceof Student)){
-            throw new ClassCastException();
-        }
-        Student stu = (Student)o;
-
-//		if(this.age>stu.age)
-//			return 1;
-//		if(this.age<stu.age)
-//			return -1;
-
-        /*
-         * 注意：在比较时，必须明确主次。主要条件相同，继续比较次要条件。
-         */
-        int temp = this.age - stu.age;
-
-        return temp==0?this.name.compareTo(stu.name):temp;
+        return temp==0?this.name.compareTo(o.name):temp;
     }
 }

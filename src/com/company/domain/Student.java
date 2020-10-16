@@ -9,10 +9,20 @@ public class Student extends Person {
     }
 
     @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
     public String toString() {
         return "Student{" +
                 "name='" + getName() + '\'' +
                 ", age=" + getAge() +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return super.compareTo(o);
     }
 }
