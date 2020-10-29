@@ -7,6 +7,7 @@ public class Person implements Comparable<Person> {
     private int age;
 
     public Person() {
+        System.out.println("person run");
     }
 
     public Person(String name, int age) {
@@ -41,7 +42,7 @@ public class Person implements Comparable<Person> {
     @Override
     public int compareTo(Person o) {
         int temp = this.age - o.age;
-        return temp==0 ? this.name.compareTo(o.name) : temp;
+        return temp == 0 ? this.name.compareTo(o.name) : temp;
     }
 
     @Override
@@ -57,4 +58,13 @@ public class Person implements Comparable<Person> {
     public int hashCode() {
         return Objects.hash(name, age);
     }
+
+    public void show(String name, int age) {
+        System.out.println("show run...name=" + name + ",age=" + age);
+    }
+
+    public static void staticShow() {
+        System.out.println("static show run ");
+    }
+
 }
